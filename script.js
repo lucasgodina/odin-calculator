@@ -13,21 +13,31 @@ document.addEventListener('DOMContentLoaded', () => {
 		button.addEventListener('click', () => {
 			if (button.classList.contains('number')) {
 				if (isResultDisplayed) {
-					firstNumber = button.textContent;
+					firstNumber = button.value;
 					display.textContent = firstNumber;
 					isResultDisplayed = false;
 				} else {
 					if (!operator) {
-						firstNumber += button.textContent;
+						firstNumber += button.value;
 						display.textContent = firstNumber;
 					} else {
-						secondNumber += button.textContent;
+						secondNumber += button.value;
 						display.textContent = secondNumber;
 					}
 				}
 			}
 
 			if (button.classList.contains('operator')) {
+				if (firstNumber && secondNumber) {
+					result = operate(
+						parseFloat(firstNumber),
+						parseFloat(secondNumber),
+						operator
+					);
+					display.textContent = parseFloat(result.toFixed(10));
+					firstNumber = result;
+					secondNumber = '';
+				}
 				operator = button.textContent;
 			}
 
@@ -52,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					parseFloat(secondNumber),
 					operator
 				);
-				display.textContent = result;
+				display.textContent = parseFloat(result.toFixed(10));
 				firstNumber = result;
 				secondNumber = '';
 				operator = '';

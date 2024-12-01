@@ -1,0 +1,143 @@
+/* Catppuccin Palette */
+:root {
+	--rosewater: #f4dbd6;
+	--flamingo: #f0c6c6;
+	--pink: #f5bde6;
+	--mauve: #c6a0f6;
+	--red: #ed8796;
+	--maroon: #ee99a0;
+	--peach: #f5a97f;
+	--yellow: #eed49f;
+	--green: #a6da95;
+	--teal: #8bd5ca;
+	--sky: #91d7e3;
+	--sapphire: #7dc4e4;
+	--blue: #8aadf4;
+	--lavender: #b7bdf8;
+	--text: #cad3f5;
+	--subtext1: #b8c0e0;
+	--subtext0: #a5adcb;
+	--overlay2: #939ab7;
+	--overlay1: #8087a2;
+	--overlay0: #6e738d;
+	--surface2: #5b6078;
+	--surface1: #494d64;
+	--surface0: #363a4f;
+	--base: #24273a;
+	--mantle: #1e2030;
+	--crust: #181926;
+}
+
+@font-face {
+	font-family: 'Digital-7 Mono';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Digital-7 Mono'),
+		url('https://fonts.cdnfonts.com/s/17796/digital-7 (mono).woff')
+			format('woff');
+}
+
+html,
+body {
+	overflow: hidden;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	background-color: var(--base);
+	color: var(--text);
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+h1 {
+	color: var(--text);
+	font-size: 2em;
+	margin-bottom: 10px;
+}
+
+.calculator {
+	background-color: var(--mantle);
+	border: 5px solid var(--surface1);
+	border-radius: 10px;
+	padding: 20px;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.display {
+	background-color: var(--surface0);
+	color: var(--text);
+	font-family: 'Digital-7 Mono', sans-serif;
+	font-size: 2em;
+	text-align: right;
+	padding: 20px;
+	border: 2px solid var(--surface1);
+	border-radius: 5px;
+	width: 100%;
+	box-sizing: border-box;
+	margin-bottom: 10px;
+}
+
+.buttons {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 10px;
+	width: 100%;
+}
+
+button {
+	background-color: var(--surface1);
+	color: var(--text);
+	font-size: 1.5em;
+	border: none;
+	border-radius: 5px;
+	padding: 20px;
+	box-shadow: 0 4px var(--surface0);
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+button:active {
+	box-shadow: 0 2px var(--surface0);
+	transform: translateY(2px);
+}
+
+.operator {
+	background-color: var(--blue);
+	color: var(--surface0);
+}
+
+.clear {
+	background-color: var(--red);
+	color: var(--surface0);
+}
+
+.equal {
+	background-color: var(--green);
+	color: var(--surface0);
+}
+
+button:hover {
+	background-color: var(--surface0);
+}
+
+footer {
+	color: var(--subtext0);
+	font-size: 0.8em;
+	position: absolute;
+	bottom: 10px;
+}
+
+a {
+	color: var(--blue);
+	text-decoration: none;
+}
+
+a:visited {
+	color: var(--blue);
+}
