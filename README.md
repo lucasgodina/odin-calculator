@@ -1,7 +1,7 @@
 # The Odin Project: Calculator
 This is the project: Calculator from the theodinproject.com Foundations Curriculum.
 
-## TODO:
+### TODO:
 - Add floating point button
 - Add backspace button
 
